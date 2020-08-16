@@ -36,7 +36,7 @@ type Context interface {
 ```
 因此修改session/session.go的这两个方法, 添加
 ```
-	logutil.Logger(ctx).Info("start transaction")
+	logutil.Logger(ctx).Info("hello transaction")
 ```
 
 
@@ -88,8 +88,8 @@ mysql> commit;
 发现有定时三秒执行的一批SQL, 这些SQL也会开启事务,因此日志较为混乱.
 
 ```
-[2020/08/16 17:45:37.424 +08:00] [INFO] [session.go:1421] ["start transaction"]
-[2020/08/16 17:45:37.424 +08:00] [INFO] [session.go:1496] ["start transaction"] [conn=1]
+[2020/08/16 17:45:37.424 +08:00] [INFO] [session.go:1421] ["hello transaction"]
+[2020/08/16 17:45:37.424 +08:00] [INFO] [session.go:1496] ["hello transaction"] [conn=1]
 [2020/08/16 17:45:37.424 +08:00] [INFO] [session.go:1504] ["NewTxn() inside a transaction auto commit"] [conn=1] [schemaVersion=25] [txnStartTS=418793687855136772]
 
 ```
