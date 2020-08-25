@@ -97,6 +97,4 @@ Threads fairness:
 ```
 $ git clone git@github.com:pingcap/go-ycsb.git
 $ make 
-
-
 ```
